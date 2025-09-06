@@ -34,9 +34,15 @@ The dataset consists of four sheets:
 ## 📊 Report Pages & Visualizations
 
 ### 1. Start
+
+<img width="702" height="392" alt="Image" src="https://github.com/user-attachments/assets/a410ac4f-2a66-4d93-b831-40327ef695c3" />
+
 - **Purpose:** Introduces the project and provides a "Start" button for navigation to the Overview page.
 
 ### 2. Overview
+
+<img width="697" height="393" alt="Image" src="https://github.com/user-attachments/assets/2e616c17-9cf2-4f96-9c85-ddb6ca6520e4" />
+
 - **Visuals:**
     - **Cards:** Summarize Total Customers, Total Orders, Total Units Sold, Average Net Sales.
     - **Clustered Bar Chart:** Highlights average discount by promotion categories.
@@ -47,19 +53,25 @@ The dataset consists of four sheets:
     - **Line Chart:** Depicts sales trends over time, with drill-down.
     - **Slicer:** Allows filtering by product names.
 
-### 3. Trends
-- **Line Charts:** Visualize net sales trends across daily, monthly, quarterly, and yearly intervals.
+### 3. Product Analysis
 
-### 4. Product Analysis
+<img width="699" height="392" alt="Image" src="https://github.com/user-attachments/assets/010ad128-97a9-4f25-b6fc-6367cb5f5a11" />
+
 - **Stacked Bar Charts:**
     - Show top 5 products by Sales, Quantity, and Profit.
     - Highlight bottom 5 products by the same metrics.
 
-### 5. Dynamic Comparison
-- **Date Slicers:** Compare metrics across two selected periods.
-- **Bar Charts:** Display Total Sales, Total Profit, and Total Quantity for each period.
+### 4. Dynamic Comparison
 
-### 6. Detailed Breakdown
+<img width="698" height="393" alt="Image" src="https://github.com/user-attachments/assets/7dcd8553-017d-4fb9-a0ce-5a7c65ef5e75" />
+
+- **Date Slicers:** Compare metrics across two selected periods.
+- **Column Charts:** Display Total Sales, Total Profit, and Total Quantity for each period.
+
+### 5. Detailed Breakdown
+
+<img width="698" height="392" alt="Image" src="https://github.com/user-attachments/assets/b2ae9d9a-960a-4916-9180-2f3a2de5210e" />
+
 - **Table:** Comprehensive transactional data view.
 - **Slicers:** Filter data by Date, Customer ID, Product Name, Promotion Name, City.
 - **Custom Measure:** Ensures dynamic filtering via slicers.
