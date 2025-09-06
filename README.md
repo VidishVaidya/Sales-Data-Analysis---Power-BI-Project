@@ -1,63 +1,98 @@
-# Sales Data Analysis-Dashboard
+# 📊 Sales Analysis Dashboard
 
-## Problem Statement
-
+## 🌟 Problem Statement
 A consumer goods company spanning categories such as Electronics, Footwear, Clothing, Home Appliances, Accessories, Kitchenware, Bags, and Personal Care requires actionable insights into its sales, profit, and customer buying behavior. The goal is to empower business stakeholders with interactive, visual dashboards that spotlight product performance, regional demand, profitability, discount effectiveness, and order-level dynamics for informed decision making.
 
+## 🚀 Project Overview
+This project analyzes sales data from a hypothetical store using Power BI. The goal is to enable stakeholders to identify patterns, track performance, and make informed decisions. The process includes:
+- **Data Profiling & Transformation:** Cleaned, merged, and transformed data using Power Query.
+- **Interactive Dashboards:** Created highly interactive visualizations across six report pages.
+- **Key Business Insights:** Derived actionable insights using calculated metrics and relationships.
 
-### Steps followed 
+## 📂 Dataset Details
+**File Name:** `Store+Data.xlsx`
 
-1. Data Validation
-- Column Distribution, Profile, and Quality: Assessed each column for validity, consistency, and completeness to identify missing values or anomalies.
+The dataset consists of four sheets:
+- **Dim Customers:** Customer details (`Customer ID`, `Customer Name`, `City`, `State`, `Pincode`, `EmailID`, `Phone Number`)
+- **Dim Product:** Product details (`ProductID`, `Product Name`, `Product Line`, `Price Per Unit (INR)`)
+- **Dim Promotion:** Promotion details (`PromotionID`, `Promotion Name`, `Ad Type`, `Coupon Code`, `Price Reduction Type`, `Percentage`)
+- **Fact Table:** Order details (`OrderID`, `Date`, `CustomerID`, `PromotionID`, `ProductID`, `Units Sold`, `Price Per Unit`, `Total Sales`, `Discount Percentage`, `Discount Value`, `Net Sales`, `Profit`)
 
-- Data Type Correction: Standardized data types (e.g., dates, numbers, strings) to ensure robust modeling and accurate visualizations.
+## 🔧 Data Transformation
 
-2. Data Transformation
-- Query Merging (Joins): Integrated multiple data tables (fact and dimension) via joins to establish a holistic data model.
+### Key Steps
+1. **Index Column:** Added `OrderID` as a unique identifier starting from 1.
+2. **Merging Queries:** Joined fact table with dimension tables to enrich data.
+3. **Calculated Columns:**
+    - `Total Sales` = `Units Sold` * `Price Per Unit`
+    - `Discount Value` = calculated using `Discount Percentage`
+    - `Net Sales` = `Total Sales` - `Discount Value`
+    - `Profit` = `Net Sales * 10%` (assumed)
+4. **Data Profiling:** Ensured data quality by handling null values and duplicates.
+5. **Relationship Setup:** Established one-to-many relationships for smooth interaction between tables.
 
-- Column Removal: Eliminated unnecessary or redundant columns to streamline the dataset.
+## 📊 Report Pages & Visualizations
 
-- Custom Calculations: Introduced calculated fields such as ‘Total Sales’ (Units Sold × Price per Unit).
+### 1. Start
+- **Purpose:** Introduces the project and provides a "Start" button for navigation to the Overview page.
 
-- Null Value Handling: Replaced nulls with zeroes where appropriate for consistency and straightforward analysis.
+### 2. Overview
+- **Visuals:**
+    - **Cards:** Summarize Total Customers, Total Orders, Total Units Sold, Average Net Sales.
+    - **Clustered Bar Chart:** Highlights average discount by promotion categories.
+    - **Map:** Displays net sales by state (bubble size = sales volume).
+    - **Donut Chart:** Shows total orders by product line.
+    - **Scatter Plot:** Examines relationship between Sales and Profit.
+    - **Stacked Column Chart:** Identifies top 3 customers by highest sales.
+    - **Line Chart:** Depicts sales trends over time, with drill-down.
+    - **Slicer:** Allows filtering by product names.
 
-3. Data Modeling
-- Primary & Foreign Key Setup: Defined PKs and FKs with correct data types to ensure integrity. All relationships maintained one-to-one, one-to-many, or many-to-one cardinality as needed.
+### 3. Trends
+- **Line Charts:** Visualize net sales trends across daily, monthly, quarterly, and yearly intervals.
 
-- Star Schema Design: Implemented a star schema separating the fact table (sales transactions) and relevant dimension tables (products, customers, dates, etc.).
+### 4. Product Analysis
+- **Stacked Bar Charts:**
+    - Show top 5 products by Sales, Quantity, and Profit.
+    - Highlight bottom 5 products by the same metrics.
 
-- Model View: Established and visualized table relationships and cardinality in the model view for maintainability and transparency.
+### 5. Dynamic Comparison
+- **Date Slicers:** Compare metrics across two selected periods.
+- **Bar Charts:** Display Total Sales, Total Profit, and Total Quantity for each period.
 
-4. Report View and Visualizations
+### 6. Detailed Breakdown
+- **Table:** Comprehensive transactional data view.
+- **Slicers:** Filter data by Date, Customer ID, Product Name, Promotion Name, City.
+- **Custom Measure:** Ensures dynamic filtering via slicers.
 
-  Requirement-specific Visuals:
+---
 
-- Bar Charts: For top/bottom 5 products by sales/profit/quantity sold.
+## 🌟 Key Insights
 
-- Line Charts: To illustrate sales trends across daily, monthly, quarterly, and annual periods.
+- **Top Products:** Identified top and bottom performing products by sales, quantity, and profit.
+- **Promotion Effectiveness:** Analyzed impact of discounts and promotions.
+- **Customer Trends:** Highlighted top-performing customers by sales.
+- **Geographic Insights:** States and cities driving the most sales.
+- **Sales Trends:** Examined sales trends over time.
+- **Dynamic Comparisons:** Performance tracked across different time periods.
 
-- Scatter Plots: To show the relationship between net sales and profit, revealing cases where high sales may not yield high profits.
+---
 
-- Bar Charts: For analyzing average discount by discount category.
+## 📁 Files
 
-- Cards: To report total number of orders in an at-a-glance format.
+- `Store+Data.xlsx`: Raw dataset.
+- `Sales Analysis.pbix`: Power BI file including all transformations and visualizations.
 
-- Map Visuals: To display sales data segregated by cities for regional performance analysis.
+---
 
-- Tables with Dynamic Filtering: Offered comprehensive order-level views filterable by product, date, customer ID, or promotion category.
+## 🛠 How to Run the Project
 
-- User-driven Period Comparison: Enabled comparison of sales, profit, and quantity sold between arbitrary user-selected time frames via DAX measures (e.g., CALCULATE, SUM, USERELATIONSHIP) and interactive slicers.
+1. Download `Store+Data.xlsx` and `Sales Analysis.pbix`.
+2. Open the `.pbix` file in Power BI Desktop.
+3. Refresh the data source to reconnect with the dataset.
+4. Explore the interactive dashboards and uncover insights.
 
-- Leveraged visual, page-level, and report-level filters to sharpen focus and enhance interactivity.
+---
 
+## 🤝 Contributions
 
-## Insights Gathered
-- Product Performance: Identified the strongest and weakest products, spotlighting areas for promotion or improvement.
-
-- Sales Trends: Uncovered seasonal and periodic patterns in sales, helping management plan for peak demand and lean periods.
-
-- Profitability Analysis: Mapped the relationship between high revenue and actual profit, supporting better pricing and discount strategies.
-
-- Regional Opportunities: Visualized sales by city, uncovering high-performing regions and highlighting areas with growth potential.
-
-- Discount Effectiveness: Analyzed whether specific discount categories boost sales or erode profit, guiding future discounting strategies.
+Suggestions and contributions are welcome! If you have ideas to improve the dashboard or add features, please raise an issue or submit a pull request.
