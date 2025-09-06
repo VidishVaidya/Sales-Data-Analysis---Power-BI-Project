@@ -47,9 +47,7 @@ The dataset consists of four sheets:
     - **Cards:** Summarize Total Customers, Total Orders, Total Units Sold, Average Net Sales.
     - **Clustered Bar Chart:** Highlights average discount by promotion categories.
     - **Map:** Displays net sales by state (bubble size = sales volume).
-    - **Donut Chart:** Shows total orders by product line.
     - **Scatter Plot:** Examines relationship between Sales and Profit.
-    - **Stacked Column Chart:** Identifies top 3 customers by highest sales.
     - **Line Chart:** Depicts sales trends over time, with drill-down.
     - **Slicer:** Allows filtering by product names.
 
