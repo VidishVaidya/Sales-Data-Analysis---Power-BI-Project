@@ -30,7 +30,7 @@ A consumer goods company spanning categories such as Electronics, Footwear, Clot
 
 4. Report View and Visualizations
 
-Requirement-specific Visuals:
+  Requirement-specific Visuals:
 
 - Bar Charts: For top/bottom 5 products by sales/profit/quantity sold.
 
